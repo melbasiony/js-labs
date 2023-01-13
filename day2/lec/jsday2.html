@@ -1,0 +1,829 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    // Array
+    // --------------------------
+    // const arr = new Array();
+    // console.log(arr);
+    // const arr2 = [];
+    // console.log(arr2);
+    // const numbers = [1, 2, 3, 4];
+    // const colors = ["red", "blue", "black"];
+    // // // // console.log(numbers);
+    // console.log(colors);
+    // // const mixTypesArr = [1, "red", "blue", 2, [3, 4]];
+    // // console.log(mixTypesArr);
+    // colors.push("yellow", "pink");
+    // console.log(colors);
+    // colors.unshift("green")
+    // console.log(colors);
+    // console.log(colors.length);
+    // console.log(colors[colors.length -1]);
+    // console.log(colors[1000]);
+    // // var x = colors.pop()
+    // // console.log(x);
+    // var x = colors.shift();
+    // console.log(x);
+    // console.log(colors);
+    //
+    // const removedEl = colors.shift();
+    // console.log(removedEl);
+    // // console.log(colors);
+    // // const newArrLength = colors.unshift("pink");
+    // // console.log(newArrLength);
+    // // console.log(colors);
+    //----------------------------------------------------
+    //object
+//     var book = {
+//         "name": "Harry Potter and the Goblet of Fire",
+//         "author": "J. K. Rowling",
+//         year: 2000
+//     };
+// // // //     // Dot notation
+//     document.write(book.author);  // Prints: J. K. Rowling
+// // // //     // Bracket notation
+//     document.write(book["year"]); // Prints: 2000
+// // //
+
+// var book = {
+//     name: "Harry Potter and the Goblet of Fire",
+//     author: "J. K. Rowling",
+//     "publication date": "8 July 2000"
+// };
+// // // // Bracket notation
+// document.write(book["publication date"]); // Prints: 8 July
+// 2000
+
+// var person = {
+//     name: "Peter",
+//     age: 28,
+//     gender: "Male"
+// };
+// var key = prompt("Enter any property name to get its value");
+// alert(person[key]); // Outputs: Peter (if enter "name")
+
+// var person = {
+//   name: "Peter",
+//   age: 28,
+//   gender: "Male"
+// };
+// // //
+// // // // // // Setting a new property
+// // // console.log(person);
+// person.country = "United States";
+// // // document.write(person.country); // Prints: United States
+// person["email"] = "peterparker@mail.com";
+// // document.write(person.email); // Prints:
+// // console.log(person);
+// // // // peterparker@mail.com
+// // // // // Updating existing property
+// person.age = 30;
+// console.log(person);
+// // // // document.write(person.age); // Prints: 30
+// person["name"] = "Peter Parker";
+// console.log(person);
+// // document.write(person.name); // Prints: Peter Parker
+//
+
+// var person = {
+//     name: "Peter",
+//     age: 28,
+//     gender: "Male",
+//     displayName: function() {
+//         alert(this.name);
+//     }
+// };
+
+// var person = {
+//   name: "Peter",
+//   age: 28,
+//   gender: "Male"
+// };
+// console.log(person);
+// // // // // // Deleting property
+// delete person.age;
+// console.log(person);
+// alert(person.age);
+
+
+//After function
+
+// let person = {
+//     name: "Peter",
+//     age: 28,
+//     gender: "Male",
+//     displayName: function() {
+//       console.log(this);
+//         alert(this.name);
+//     }
+// };
+// person.displayName(); // Outputs: Peter
+// person["displayName"](); // Outputs: Peter
+
+// value Vs ref
+// var message = "Hello World!";
+// var greet = message; // Assign message variable to a new
+// // // // // variable
+// greet = "Hi, there!";
+// document.write(message, "</br>");  // Prints: Hello World!
+// document.write(greet);  // Prints: Hi, there!
+// var person = {
+//     name: "Peter",
+//     age: 28,
+//     gender: "Male"
+// };
+// var user = person; // Assign person variable to a new
+// console.log(user);
+// console.log(person);
+// // // // // variable
+// user.name = "Harry";
+// document.write(person.name, '<br>');  // Prints: Harry
+// document.write(user.name);  // Prints: Harry
+
+//     let user = new Object();
+//     let user2 = {};
+// // //
+//     // let user = {
+//     //   name: "Ali",
+    //   age: 20,
+    //   "likes birds": true,
+    // };
+    // const likesBirdsKey = "likes birds";
+    // console.log(user[likesBirdsKey]);
+    // console.log(user);
+    // console.log(user.name);
+    // console.log(user.age);
+    // user.isAdmin = true;
+    // console.log(user);
+    // delete user.age;
+    // console.log(user);
+
+    // let user = {
+    //   name: "Iman",
+    //   age: 65,
+    //   //   userNameKey: '',
+    //   return: 5
+    // };
+
+    // // user.e-mail = '';
+    // user["e-mail"] = "Iman@email.com";
+    // console.log(user);
+    // console.log(user["e-mail"]);
+    // console.log(user["age"]);
+
+    // const userNameKey = "name";
+    // console.log(user[userNameKey]); // user["name"]
+    // console.log(user.userNameKey); // undefined
+    // console.log(user.return);
+    // --------------------------
+
+    // const user = {
+    //   name: "Ali",
+    //   age: 10,
+    // };
+    // //
+    // // // user.name = "ahmed";
+    // // // user.id = 1;
+    // // // // user = user;
+    // // // // user = {};
+    // let user2 = {};
+    // Object.assign(user2, user);
+    // user2.name = 'Ahmed'
+    //
+    // let user3 = Object.assign({city: 'Alex'}, user2);
+
+    // console.log(user3);
+    // user2.age = 50;
+    // user3.age = 70;
+    // console.log("user: ", user);
+    // console.log("user2: ", user2);
+    // console.log("user3: ", user3);
+    // // // user2 = 1;
+    //
+    // const keys = Object.keys(user3);
+    // console.log(keys);
+
+    // const user = {
+    //   name: "Ali",
+    //   age: 10,
+    // };
+    // user.address = {
+    //   city: "Alex",
+    // };
+    // const user2 = { city: "Alex" };
+
+    // Object.assign(user2, user);
+
+    // console.log(user2);
+
+    // let user = {
+    //   name: 'ahmed',
+    //   age: 40
+    // }
+    // let clone = Object.assign({}, user)
+    // console.log(clone);
+
+    // let user = {
+    //   name: 'iti'
+    // }
+    // let perm = {canView: true}
+    // let perm2 = {canEdit: true}
+    // Object.assign(user, perm, perm2)
+    // console.log(user);
+    // symbol
+
+    // Symbol type -> next session
+    // Doom Element ->
+    // let id1 = Symbol("id");
+    // let id2 = Symbol("id");
+    // //
+    // // console.log(id1 == id2);
+    // // console.log(id1);
+    // // console.log(id1.description);
+    // const ageKey = "age";
+    //
+    // let user = {
+    //   [id1]: "Secret value",
+    //   [ageKey]: 20,
+    //   name: "ali",
+    // };
+    // console.log(user);
+    // // console.log(user[ageKey]);
+    // // console.log(user[id1]);
+    // // console.log(user.id1);
+    // // console.log(user[id1]);
+    //
+    // let symbols = Object.getOwnPropertySymbols(user);
+    // console.log(user[symbols[0]]);
+
+
+// loops
+// let i = 0;
+// while (i <= 3) {
+//   // code excute
+//   console.log(i);
+//   i++;
+// }
+
+
+
+// var i = 0
+// do {
+//   console.log(i);
+//   i++;
+// } while (i < 3);
+
+//
+// for (begin; condition; step){
+// loop body
+// }
+// for (let i = 0; i <= 3; i++) {
+//   console.log(i);
+// }
+// console.log(i); // Uncaught ReferenceError: i is not defined
+//
+// let i = 0;
+// for (; i < 3; i++) {
+//   console.log(i);
+// }
+// console.log(i); // 3
+
+// let i = 0;
+// for (; i < 3;) {
+//   console.log(i);
+//   i++;
+// }
+// console.log(i); // 3
+//
+// let i = 0;
+// for (;;) {
+//   console.log(i);
+//   i++;
+//   if (i >= 3) {
+//     break;
+//   }
+// }
+// console.log(i); // 3
+
+// let i;
+// for (i = 0; i < 3; i++) {
+//   console.log(i);
+// }
+// console.log(i); // 3
+
+
+// const arr = ['a', 'b', 'c','d'];
+// // //
+//
+// for(let i = 0; i < arr.length ; i++){
+//     console.log(arr[i]);
+// }
+
+// var user = {
+//   name: "Ali",
+//   age: 20,
+// };
+
+/*
+return array
+array containing keys of object
+in our case keys -> name, age
+array = ['name', 'age']
+array.length = 2
+*/
+
+// let userKeys = Object.keys(user);
+// //
+// for (let i = 0; i < userKeys.length; i++) {
+// //   // console.log(userKeys[i]);
+// //   // var key = userKeys[i]
+// //   // console.log(user[key]);
+// //   // console.log(user[userKeys[i]]);
+// // //   console.log(user[userKeys[i]]);
+// // //       // console.log(user[userKeys[i]]);
+// // //   // console.log(userKeys[i]);
+//   console.log(`${userKeys[i]} : ${user[userKeys[i]]}`); //embed string
+// }
+// var user = {
+//   name: "Ali",
+//   age: 20,
+// };
+// var user = ['ah', 'iti']
+// for (const prop in user)
+// {
+//   // console.log(`${prop} : ${user[prop]}`);
+//
+//   console.log(prop);
+//   console.log(user[prop]);
+// }
+//
+// user = {
+//   name: "Ali",
+//   age: 20,
+// };
+// for (const prop in user){
+//   // console.log(prop);
+//     console.log(`${prop} : ${user[prop]}`);
+// }
+
+// const arr = [1, 2, 3, 4];
+// //
+// for (let i = 0; i < arr.length; i++) {
+//     console.log('Before continue', arr[i]);
+//   if (arr[i] === 2) continue;
+//   console.log(arr[i]);
+// }
+// const arr = ["a", "v", "c", "d"];
+//
+// for (const value of arr) {
+//     console.log(value);
+// }
+// var arr = ['a', 'b', 'c']
+
+// var user = {
+//   name: "Ali",
+//   age: 20,
+// };
+// userKeys = Object.keys(user)
+// for (let key of userKeys){
+//   console.log(user[key]);
+// }
+// another examples
+//
+
+/*
+
+var sum = Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+sum = sum + Number(prompt("enter number"));
+*/
+
+// var sum =0;
+// var count = Number(prompt("enter numbers count "));
+// for(var i=0;i<count;i++){
+//     sum += Number(prompt("enter number "+(i+1)));
+// }
+// alert(sum);
+
+// /*
+// var stop = false;
+// var sum = 0;
+// while(!stop){
+//     sum = sum + Number(prompt("enter number "));
+//     var answer = prompt("do you want to exit (yes,no)");
+//     if(answer=="yes"){
+//         stop = true;
+//     }
+// }
+//
+// alert(sum)
+// */
+
+/*
+var stop = false;
+var sum = 0;
+do{
+    sum = sum + Number(prompt("enter number "));
+    var answer = prompt("do you want to exit (yes,no)");
+    if(answer=="yes"){
+        stop = true;
+    }
+}while(!stop)
+alert(sum);
+*/
+
+//break; continue;
+
+
+
+
+/*
+var stop = false;
+var sum = 0;
+do{
+    sum = sum + Number(prompt("enter number "));
+    var answer = prompt("do you want to exit (yes,no)");
+    if(answer=="yes"){
+        break;
+    }
+}while(true)
+alert(sum);
+*/
+
+
+/*
+var sum =0;
+var count = Number(prompt("enter numbers count "));
+for(var i=0;i<count;i++){
+
+    var enteredNumber = Number(prompt("enter number "+(i+1)));
+    if(enteredNumber<0)
+        continue;
+
+    sum = sum + enteredNumber;
+
+}
+
+
+
+alert(sum);
+*/
+
+
+/*
+var sum = 0;
+for(var i =1;i<=100;i++){
+    if(i%2==1)
+        continue;
+
+    sum +=i;
+}
+alert(sum);
+*/
+
+//functions
+// function printMessage() {
+//   console.log("Welcome!");
+// }
+// //
+// printMessage();
+// printMessage();
+// printMessage();
+// printMessage();
+
+// function printMessage(name) {
+//   console.log(`Welcome ${name}!`);
+//   // 'welcome' + name + '!'
+// }
+// //
+// printMessage('Ali');
+
+// function sum(num1, num2) {
+//   console.log(num1 + num2);
+// }
+// // //
+// sum(1,2);
+//
+// const sum = function (num1, num2) {
+//   // console.log(num1 + num2);
+//   return num1 + num2;
+// };
+
+// function sum(num1, num2) {
+// //   // console.log("sum(num1, num2)");
+//   return num1 + num2;
+// }
+// console.log(sum(1, 2))
+
+// function sum(num1, num2, num3 = 0) {
+//   var message = "Sum :";
+//   const result = num1 + num2 + num3;
+//   // console.log(num1, num2, num3);
+//   // console.log("sum(num1, num2, num3)");
+//   console.log(`${message} ${result}`);
+//   return result;
+// }
+
+// console.log(num1);
+// console.log(message);
+// const result = sum(5, 3, 4);
+// console.log(result);
+//
+// printMessage()
+// function printMessage(name = "Hassan") {
+//   console.log(`Welcome ${name}`);
+// }
+
+// // console.log(printMessage);
+// // printMessage(); // undefined()
+// printMessage(); // undefined()
+//
+// printMessage("Ahmed");
+// let printMessage = function (name="ITI") {
+//   console.log(`Welcome ${name}`);
+// };
+// printMessage("Ahmed");
+//
+// ------------------------------------------
+// scope
+
+// var x = 3;
+// function access(){
+//   var x = 0
+//   x +=1
+//   console.log('x inside function', x);
+// }
+// access()
+// console.log(x);
+// function sum(num1 , num2){
+//   console.log(num1, num2);
+//   return num1 + num2;
+// }
+// const result = sum(2 + 3, 5 + 9);
+// console.log(result);
+
+// function ask(question, okFn, cancelFn) {
+//   // question = Do you agree?",
+//   //okFn = showOk
+//   // cancelFn = showCancel
+//   const userName = prompt('Enter your name: ');
+//   const answer = confirm(question);
+//   if (answer) {
+//     okFn(userName);
+//   } else {
+//     cancelFn(userName);
+//   }
+// }
+// //
+// ask("Do you agree?", showOk, showCancel);
+// // //
+// function showOk(name) {
+//   console.log(`${name}, you agreed !`);
+// }
+// //
+// function showCancel(name) {
+//   console.log(`${name}, you canceled .`);
+// }
+
+// ask(
+//   "Do you agree?",
+//   function (name) {
+//     console.log(`${name},  agreed again !!`);
+//   },
+//   showCancel
+// );
+
+// ------------------------------
+// function calc(a, b, op){
+//   if (isNaN(Number(a)) || isNaN(Number(b))){
+//     return 'Invalid input'
+//   }
+//   switch (op) {
+//     case '+':
+//       return a + b
+//       break;
+//     case '-':
+//       return a - b
+//       break;
+//     default:
+//       return 'invalid operation'
+//       break
+//   }
+// }
+// calc(1, 2, '+')
+//
+// next session
+
+// const printMessage = () => console.log("Hello");
+
+// const printMessage = name => console.log(`Hello ${name}`);
+// const sum = (a, b) => a + b;
+// const sum = (a, b) => {
+//   const result = a + b;
+//   return result;
+// };
+
+// const result = sum(1, 5);
+// console.log(result);
+// printMessage("Ali");
+
+// const getUser = () => ({ name: "Ali" });
+
+// const user = getUser();
+
+// console.log(user);
+
+// function ask(question, okFn, cancelFn) {
+//   const userName = prompt("Enter your name: ");
+//   const answer = confirm(question);
+
+//   if (answer) {
+//     okFn(userName);
+//   } else {
+//     cancelFn(userName);
+//   }
+// }
+
+// ask(
+//   "Do you agree?",
+
+//   (name) => console.log(`${name},  agreed again !!`),
+
+//   function (name) {
+//     console.log(`${name}, you canceled .`);
+//   }
+// );
+
+// let userName = "Walaa";
+
+// function printMessage() {
+//   let age = 20;
+//   userName = "Salah";
+//   console.log(userName);
+//   console.log("Hello !");
+// }
+
+// printMessage();
+// console.log(userName);
+// let userName = "Ali";
+
+// function first() {
+//   console.log(`first userName: ${userName}`);
+//   second();
+//   let user = {};
+//   function second() {
+//     console.log(`second userName: ${userName}`);
+//     third();
+//     function third() {
+//       let userName = "Salah";
+//       var age = 20;
+//       console.log(`third userName: ${userName}`);
+//       fourth();
+//       function fourth() {
+//         console.log(`fourth userName: ${userName}`);
+//       }
+//     }
+//   }
+// }
+
+// first();
+// console.log(userName);
+// console.log(age);
+// userName = "Ahmed";
+// first();
+
+// let user = {
+//   name: "Ali",
+//   age: 20,
+//   getThis: function () {
+//     return this;
+//   },
+//   getArrowThis: () => this,
+//   getArrowThisFromUser: function(){
+//     console.log(this.getArrowThis());
+//   }
+// };
+
+// // console.log(user.getThis());
+// // console.log(user.getArrowThis());
+// // const getThis = user.getThis;
+// // console.log(getThis());
+// "use strict"
+// var userName = "Ali";
+
+// let user = {
+//   getThis: function () {
+//     return this;
+//   },
+//   getArrowThis: () => this,
+//   userName: "Ahmed",
+//   getName: function () {
+//     return this.userName;
+//   },
+//   getNameArrow: () => this.userName,
+// };
+
+// function getGlobalThis() {
+//   return this;
+// }
+
+// console.log("user.getName()", user.getName());
+// console.log("user.getNameArrow()", user.getNameArrow());
+// console.log("this: ", this);
+// console.log("getGlobalThis() : ", getGlobalThis());
+// console.log("user.getThis()", user.getThis());
+// console.log("getArrowThis()", user.getArrowThis());
+
+// const myObject = {
+//   myArrowFunction: null,
+//   myMethod: function () {
+//     console.log(this); // Object
+//     this.myArrowFunction = () => { console.log(this) };
+//   }
+// };
+
+// myObject.myMethod();
+// myObject.myArrowFunction()
+
+// console.log(myObject.myMethod());
+// console.log(myObject.myArrowFunction());
+// const myMethod = myObject.myMethod;
+// console.log(myMethod());
+// console.log(myObject.myArrowFunction);
+// console.log(myArrowFunction());
+// var userName = 'Ahmed';
+
+// let user = {
+//   userName: "Ali",
+//   age: 20,
+// };
+
+// function getName() {
+//   console.log(this);
+//   return this.userName;
+// }
+
+// const userName2 = getName.call(user);
+// console.log(userName2);
+// --------------------------------------
+
+// let timerId = setTimeout(() => {
+//   console.log("inside setTimeout 2000");
+// }, 2000);
+
+// setTimeout(() => {
+//   console.log("inside setTimeout 1000");
+//   clearTimeout(timerId);
+// }, 1000);
+
+// let intervalId = setInterval(() => {
+//   console.log(`setInterval`);
+// }, 2000);
+
+// setTimeout(() => {
+//   console.log("inside setTimeout 6000");
+//   console.log("clearInterval");
+//   clearInterval(intervalId);
+// }, 6000);
+
+// function counter() {
+//   let count = 0;
+//   return function () {
+//     return count++;
+//   };
+// }
+//
+// const counter1 = counter(); // 0
+// const counter2 = counter(); // 0
+//
+// console.log(counter1()); // return 0 , count = 1
+// console.log(counter2()); // return 0 , count = 1
+//
+// console.log(counter1()); // return 1, count = 2
+// console.log(counter2()); // return 1, count = 2
+//
+// console.log(counter1()); // return 2, count = 3
+// console.log(counter2()); // return 2, count = 3
+  // var answer = prompt('Enter any arg');
+  // var checkAnswer = Number(answer)
+  // if (isNaN(checkAnswer)){
+  //   alert('error')
+  // }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
